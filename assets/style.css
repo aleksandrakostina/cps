@@ -5,9 +5,6 @@ html {
 *, 
 *::after, 
 *::before {
-  padding: 0;
-  margin: 0;
-  border: 0;
   box-sizing: inherit;
 }
 
@@ -20,52 +17,10 @@ body {
   color: #1B1C21;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul,
-ol,
-li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-a {
-  color: inherit;
-}
-
 .container {
   max-width: 1063px;
   margin: 0 auto;
   padding: 0 16px;
-}
-
-h1 {
-  font-size: 28px;
-  line-height: 143%;
-  font-weight: 700;
-  letter-spacing: -0.6px;
-}
-
-.text {
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: 0.2px;
-  color: #1B1C21;
 }
 
 /*------------------------ICON------------------------*/
@@ -75,21 +30,42 @@ h1 {
 
 .icon__button {
   cursor: pointer;
-  display: block;
-  height: 40px;
-}
-
-.icon__image {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 0;
   width: 40px;
   height: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon__button--call {
+  background-image: url("./icons/call.svg");
+}
+
+.icon__button--chat {
+  background-image: url("./icons/chat.svg");
+}
+
+.icon__button--profile {
+  background-image: url("./icons/profile.svg");
+}
+
+.icon__button--repair {
+  background-image: url("./icons/repair.svg");
+}
+
+.icon__button--checkstatus {
+  background-image: url("./icons/checkstatus.svg");
 }
 
 .icon__text {
-  display: none;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.2px;
-  margin-right: 8px;
+  color: #1B1C21;
 }
 
 .icon:hover .icon__text {
@@ -109,12 +85,54 @@ h1 {
 
 .header__burger {
   margin-right: 16px;
-  display: flex;
-  align-items: center;
 }
 
 .header__icon-bar {
   margin-left: auto;
+}
+
+/*------------------------BURGER------------------------*/
+.burger {
+  width: 40px;
+  height: 40px;
+  background: #FF3E79;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+}
+
+.burger__line {
+  width: 10px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 11px;
+  display: block;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.burger__line::before,
+.burger__line::after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 1px;
+  display: block;
+}
+
+.burger__line::before {
+  top: -7px;
+  left: 0;
+  width: 18px;
+}
+
+.burger__line::after {
+  top: 7px;
+  left: 0;
+  width: 14px;
 }
 
 /*------------------------ICON-BAR------------------------*/
@@ -126,6 +144,9 @@ h1 {
 .icon-bar__list {
   display: flex;
   align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .icon-bar__list--helper::before {
@@ -144,12 +165,14 @@ h1 {
 
 .icon-bar__item {
   margin-left: 16px;
+  list-style: none;
 }
 
 /*------------------------LOGO------------------------*/
 .logo {
   width: 98px;
   height: 52px;
+  background: url("./icons/logo.svg") no-repeat;
 }
 
 .logo__image {
@@ -164,15 +187,47 @@ h1 {
   height: 100%;
 }
 
+.page__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .page__title {
-  border-left: 4px solid #41F6D7;
-  margin-left: -16px;
-  padding-left: 16px;
+  font-size: 28px;
+  line-height: 143%;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  position: relative;
+  margin: 0;
+}
+
+.page__title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -16px;
+  height: 100%;
+  width: 4px;
+  background: #41F6D7;
+}
+
+.page__icon-bar {
+  display: none;
 }
 
 .page__slide-menu {
   margin: 24px -16px 24px 0;
-  overflow-x: auto;
+  position: relative;
+}
+
+.page__slide-menu::after{
+  content: "";
+  width: 24px;
+  height: 40px;
+  background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .page__about-us {
@@ -197,16 +252,32 @@ h1 {
   margin-bottom: 16px;
 }
 
-.about-us__text {
+.about-us__description {
   margin-bottom: 16px;
   max-height: 92px;
   overflow: hidden;
 }
 
+.about-us__text {
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.2px;
+  color: #1B1C21;
+  margin: 0 0 20px;
+}
+
+.about-us__text:last-child {
+  margin-bottom: 0;
+}
+
 /*------------------------SLIDE_MENU------------------------*/
-.slide-menu {
+.slide-menu__list {
   display: flex;
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
 }
 
 .slide-menu__item {
@@ -215,11 +286,14 @@ h1 {
   letter-spacing: -0.2px; 
   white-space: nowrap;
   color: #7E7E82;
+  list-style: none;
 }
 
 .slide-menu__link {
   display: block;
   padding: 8px 9px 8px 17px;
+  text-decoration: none;
+  color: #7E7E82;
 }
 
 .slide-menu__item--active {
@@ -244,12 +318,20 @@ h1 {
   cursor: pointer;
 }
 
+.button-details:hover {
+  text-decoration: underline;
+}
+
 .button-details__input {
   position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+}
+
+.button-details__input:focus + .button-details__box {
+  outline: #000000 auto 5px;
 }
 
 .button-details__input:checked + .button-details__box {
@@ -260,7 +342,7 @@ h1 {
   position: absolute;
   width: 1em;
   height: 1em;
-  background-image: url("./assets/icons/expand.svg");
+  background-image: url("./icons/expand.svg");
   background-repeat: no-repeat;
   background-position: center;
   margin-left: -1.5em;
@@ -276,7 +358,7 @@ h1 {
   }
   /*------------------------HEADER------------------------*/
   .header__burger {
-    margin-right: 21px;
+    margin-right: 43px;
   }
 
   .header__burger::after {
@@ -286,7 +368,10 @@ h1 {
     height: 32px;
     background: #EAEAEA;
     border-radius: 1px;
-    margin-left: 20px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(-50%, -50%);
   }
 
   /*------------------------ICON-BAR------------------------*/
@@ -295,14 +380,12 @@ h1 {
   }
 
   /*------------------------PAGE------------------------*/
-  .page__title {
-    margin-left: -24px;
-    padding-left: 24px;
+  .page__title:before {
+    left: -24px;
   }
 
   .page__slide-menu {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin: 32px 0;
   }
 
   .page__about-us {
@@ -324,7 +407,7 @@ h1 {
     margin: 0;
   }
 
-  .about-us__text {
+  .about-us__description {
     max-height: 166px;
     margin-bottom: 10px;
   }
@@ -340,14 +423,17 @@ h1 {
   }
 
   /*------------------------SLIDE_MENU------------------------*/
-  .slide-menu {
+  .slide-menu__list {
     flex-wrap: wrap;
   }
 
   /*------------------------PAGE------------------------*/
-  .page__title {
-    margin-left: -35px;
-    padding-left: 35px;
+  .page__title:before {
+    left: -35px;
+  }
+
+  .page__icon-bar {
+    display: flex;
   }
 
   /*------------------------ABOUT-US------------------------*/
@@ -356,43 +442,29 @@ h1 {
     margin-right: 36px;
   }
 
-  .about-us__text {
+  .about-us__description {
     margin-bottom: 14px;
   }
 
   /*------------------------HEADER------------------------*/
-  .header__burger,
-  .header__logo {
+  .header {
     display: none;
-  }
-
-  .header__container {
-    min-height: 0;
-    position: relative;
   }
 
   /*------------------------ICON-BAR------------------------*/
   .icon-bar__list--hidden {
     display: none;
   }
-
-  .icon-bar__list--helper {
-    position: absolute;
-    top: 27px;
-    right: 35px;
-  }
-
-  .icon-bar__list--helper::before {
-    display: none;  
-  }
-
+  
   /*------------------------ICON------------------------*/
-  .icon__text {
-    display: block;
+  .icon__button {
+    width: auto;
+    background-size: 40px;
   }
-
-  .icon a {
-    display: flex;
-    align-items: center;
+  
+  .icon__button--repair,
+  .icon__button--checkstatus {
+    background-position: right center;
+    padding-right: 48px;
   }
 }
