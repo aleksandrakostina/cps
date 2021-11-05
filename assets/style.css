@@ -23,53 +23,66 @@ body {
   padding: 0 16px;
 }
 
-/*------------------------ICON------------------------*/
-.icon button {
-  background: transparent;
-}
-
-.icon__button {
+/*------------------------ICON-BUTTON------------------------*/
+.icon-button {
   cursor: pointer;
   display: flex;
   align-items: center;
   text-decoration: none;
   border: 0;
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 0;
+  background: transparent;
 }
 
-.icon__button--call {
-  background-image: url("./icons/call.svg");
-}
-
-.icon__button--chat {
-  background-image: url("./icons/chat.svg");
-}
-
-.icon__button--profile {
-  background-image: url("./icons/profile.svg");
-}
-
-.icon__button--repair {
-  background-image: url("./icons/repair.svg");
-}
-
-.icon__button--checkstatus {
-  background-image: url("./icons/checkstatus.svg");
-}
-
-.icon__text {
+.icon-button__text {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.2px;
   color: #1B1C21;
+  padding-right: 8px;
 }
 
-.icon:hover .icon__text {
+.icon-button:hover .icon-button__text {
   text-decoration: underline;
+}
+
+.icon-button:hover .icon {
+  filter: saturate(2) opacity(0.7);
+}
+
+/*------------------------ICON------------------------*/
+.icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.6s;
+}
+
+.icon--call {
+  background-image: url("./icons/call.svg");
+}
+
+.icon--chat {
+  background-image: url("./icons/chat.svg");
+}
+
+.icon--profile {
+  background-image: url("./icons/profile.svg");
+}
+
+.icon--repair {
+  background-image: url("./icons/repair.svg");
+}
+
+.icon--checkstatus {
+  background-image: url("./icons/checkstatus.svg");
+}
+
+.icon--search {
+  background-image: url("./icons/search.svg");
 }
 
 /*------------------------HEADER------------------------*/
@@ -99,6 +112,12 @@ body {
   border-radius: 50%;
   border: none;
   position: relative;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.burger:hover {
+  filter: saturate(2) opacity(0.7);
 }
 
 .burger__line {
@@ -135,6 +154,31 @@ body {
   width: 14px;
 }
 
+.burger__close {
+  height: 2px;
+  width: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  display: block;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.burger__close::after {
+  content: "";
+  height: 2px;
+  width: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  left: 50%;
+  display: block;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
 /*------------------------ICON-BAR------------------------*/
 .icon-bar {
   display: flex;
@@ -156,7 +200,7 @@ body {
   height: 32px;
   background-color: #EAEAEA;
   border-radius: 1px;
-  margin-left: 16px;
+  margin: 0 20px;
 }
 
 .icon-bar__list--hidden {
@@ -166,6 +210,10 @@ body {
 .icon-bar__item {
   margin-left: 16px;
   list-style: none;
+}
+
+.icon-bar__item:first-child {
+  margin-left: 0;
 }
 
 /*------------------------LOGO------------------------*/
@@ -350,6 +398,141 @@ body {
   transform: translateY(-50%);
 }
 
+/*------------------------SIDENAV------------------------*/
+.sidenav {
+  width: 320px;
+  height: 100%;
+  padding: 23px 24px 32px;
+  background: #FFFFFF;
+  -webkit-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+  -moz-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+  box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.sidenav__header {
+  display: flex;
+  align-items: center;
+}
+
+.sidenav__burger {
+  margin-right: 17px;
+}
+
+.sidenav__logo {
+  margin-right: auto;
+}
+
+.sidenav__menu {
+  margin-top: 23px; 
+}
+
+.sidenav__email {
+  margin-bottom: 12px;
+}
+
+.sidenav__email a {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.sidenav__email a:hover {
+  text-decoration: underline;
+}
+
+.sidenav__tel a {
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: -0.6px;
+  color: #1B1C21;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidenav__contact {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.sidenav__icon-bar {
+  margin-bottom: 16px;
+}
+
+/*------------------------MENU------------------------*/
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__item {
+  margin-bottom: 24px;
+}
+
+.menu__item:last-child {
+  margin-bottom: 0;
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.2px;  
+  color: #1B1C21;
+  text-decoration: none;
+}
+
+.menu__link--active {
+  color: #7E7E82;
+  position: relative;
+}
+
+.menu__link--active::before { 
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -24px;
+  display: block;
+  width: 4px;
+  height: 32px;
+  background: #41F6D7;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+.lang__item {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.2px; 
+  color: #1B1C21;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.lang__item:last-child {
+  margin-right: 0;
+}
+
+.lang__item--active {
+  color: #7E7E82;
+}
+
+.lang__item:hover:not(.lang__item--active) {
+  text-decoration: underline;
+}
+
 /*------------------------MEDIA------------------------*/
 
 @media screen and (min-width: 768px) {
@@ -414,7 +597,7 @@ body {
 
   .about-us__image img {
     border-radius: 6px;
-  } 
+  }
 }
 
 @media screen and (min-width: 1120px) {
@@ -455,16 +638,18 @@ body {
   .icon-bar__list--hidden {
     display: none;
   }
-  
-  /*------------------------ICON------------------------*/
-  .icon__button {
-    width: auto;
-    background-size: 40px;
+}
+
+@media screen and (min-height: 676px) {
+  .sidenav__menu {
+    margin-top: 47px;
+  }
+
+  .sidenav__contact {
+    margin-top: 268px;
   }
   
-  .icon__button--repair,
-  .icon__button--checkstatus {
-    background-position: right center;
-    padding-right: 48px;
+  .menu__item {
+    margin-bottom: 32px;
   }
 }
