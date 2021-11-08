@@ -154,29 +154,26 @@ body {
   width: 14px;
 }
 
-.burger__close {
-  height: 2px;
-  width: 22px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+.burger--close .burger__line {
+  height: 0;
+  width: 0;
+  transform: translate(-50%, -50%);
   left: 50%;
-  display: block;
-  background: #ffffff;
-  border-radius: 1px;
 }
 
-.burger__close::after {
-  content: "";
-  height: 2px;
+.burger--close .burger__line::before,
+.burger--close .burger__line::after {
   width: 22px;
-  position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
   left: 50%;
-  display: block;
-  background: #ffffff;
-  border-radius: 1px;
+}
+
+.burger--close .burger__line::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.burger--close .burger__line::after {
+  transform: translate(-50%, -50%) rotate(135deg);
 }
 
 /*------------------------ICON-BAR------------------------*/
