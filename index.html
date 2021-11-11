@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/fonts.css">
     <title>CPS — Услуги и сервисы</title>
@@ -49,48 +50,48 @@
       </div>
     </header>
     <main class="page">
-      <div class="container page__container">
+      <div class="container">
         <div class="page__header">
-          <h1 class="page__title">Услуги и сервисы</h1>
-          <div class="icon-bar page__icon-bar">
-            <ul class="icon-bar__list">
-              <li class="icon-bar__item">
-                <a href="#" class="icon-button">
-                  <span class="icon-button__text">Статус ремонта</span>
-                  <span class="icon icon--repair"></span>
-                </a>
+            <h1 class="page__title">Услуги и сервисы</h1>
+            <div class="icon-bar page__icon-bar">
+              <ul class="icon-bar__list">
+                <li class="icon-bar__item">
+                  <a href="#" class="icon-button">
+                    <span class="icon-button__text">Статус ремонта</span>
+                    <span class="icon icon--repair"></span>
+                  </a>
+                </li>
+                <li class="icon-bar__item">
+                  <a href="#" class="icon-button">
+                    <span class="icon-button__text">Оставить заявку</span>
+                    <span class="icon icon--checkstatus"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="slide-menu page__slide-menu">       
+            <ul class="slide-menu__list">
+              <li class="slide-menu__item slide-menu__item--active">
+                <a href="#" class="slide-menu__link">Ремонтируемые устройства</a>
               </li>
-              <li class="icon-bar__item">
-                <a href="#" class="icon-button">
-                  <span class="icon-button__text">Оставить заявку</span>
-                  <span class="icon icon--checkstatus"></span>
-                </a>
+              <li class="slide-menu__item">
+                <a href="#" class="slide-menu__link">Дополнительные услуги</a>
+              </li>
+              <li class="slide-menu__item">
+                <a href="#" class="slide-menu__link">Цены на услуги</a>
+              </li>
+              <li class="slide-menu__item">
+                <a href="#" class="slide-menu__link">Специальные цены</a>
+              </li>
+              <li class="slide-menu__item">
+                <a href="#" class="slide-menu__link">Адреса сервисных центров</a>
+              </li>
+              <li class="slide-menu__item">
+                <a href="#" class="slide-menu__link">Отзывы</a>
               </li>
             </ul>
-          </div>
-        </div>
-        <div class="slide-menu page__slide-menu">          
-          <ul class="slide-menu__list">
-            <li class="slide-menu__item slide-menu__item--active">
-              <a href="#" class="slide-menu__link">Ремонтируемые устройства</a>
-            </li>
-            <li class="slide-menu__item">
-              <a href="#" class="slide-menu__link">Дополнительные услуги</a>
-            </li>
-            <li class="slide-menu__item">
-              <a href="#" class="slide-menu__link">Цены на услуги</a>
-            </li>
-            <li class="slide-menu__item">
-              <a href="#" class="slide-menu__link">Специальные цены</a>
-            </li>
-            <li class="slide-menu__item">
-              <a href="#" class="slide-menu__link">Адреса сервисных центров</a>
-            </li>
-            <li class="slide-menu__item">
-              <a href="#" class="slide-menu__link">Отзывы</a>
-            </li>
-          </ul>
-        </div>
+        </div>   
         <div class="page__about-us about-us">
           <div class="about-us__col">
             <div class="about-us__description">
@@ -99,20 +100,135 @@
               <p class="about-us__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает 
                 большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою 
                 очередь, советуют нас родным и близким.</p>
+              <p class="about-us__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете 
+                отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+              <p class="about-us__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает 
+                большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою 
+                очередь, советуют нас родным и близким.</p>
             </div>
-            <div class="about-us__details">
-              <label class="button-details">
-                <input type="checkbox" class="button-details__input">
-                <span class="button-details__box"></span>
-                Читать далее               
-              </label>
-            </div>
+            <label class="about-us__button-details button-details">
+              <input type="checkbox" class="button-details__input">
+              <span class="button-details__box"></span>
+              <span class="button-details__text">Читать далее</span>            
+            </label>
           </div>
           <div class="about-us__col about-us__image">
-            <img src="assets/images/cps.jpg" alt="">
+              <img src="assets/images/cps.jpg" alt="">
           </div>
         </div>
+        <section class="feature">
+          <div class="feature__header">
+            <h2 class="feature__title">Ремонт техники различных брендов</h2>
+          </div>
+          <div class="feature__content">
+            <div class="brands">
+              <div class="brands__content">
+                <div class="swiper brands__swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img src="./assets/images/lenovo.png" alt="lenovo">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/samsung.png" alt="samsung">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/apple.png" alt="apple">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/bosch.png" alt="bosch">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/hp.png" alt="hp">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/acer.png" alt="acer">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/viewsonic.png" alt="viewsonic">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/sony.png" alt="sony">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img src="./assets/images/lenovo.png" alt="lenovo">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/samsung.png" alt="samsung">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="brands__item">
+                        <img class="brands__image" src="./assets/images/apple.png" alt="apple">
+                        <a class="brands__link" href="#">
+                          <span class="icon-go"></span>
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div> 
+              </div>
+              <label class="brands__button-details button-details">
+                <input type="checkbox" class="button-details__input">
+                <span class="button-details__box"></span>
+                <span class="button-details__text">Показать еще</span>               
+              </label>   
+            </div>
+          </div>
+        </section>
       </div>
     </main>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
