@@ -18,7 +18,8 @@ body {
 }
 
 .container {
-  max-width: 1063px;
+  /*max-width: 1063px;*/
+  max-width: 1425px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -229,7 +230,6 @@ body {
 .page {
   background: #F8F8F8;
   padding: 24px 0 35px;
-  height: 100%;
 }
 
 .page__header {
@@ -404,18 +404,24 @@ body {
 .sidenav {
   width: 320px;
   height: 100%;
-  padding: 23px 24px 32px;
+  padding: 19px 16px 32px;
   background: #FFFFFF;
-  -webkit-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
-  -moz-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
-  box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
+  transform: translateX(-400px);
   overflow-x: hidden;
+  transition: transform .4s;
+}
+
+.sidenav--open {
+  transform: translateX(0px);
+  -webkit-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+  -moz-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+  box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
 }
 
 .sidenav__header {
@@ -444,8 +450,8 @@ body {
   line-height: 150%;
   letter-spacing: -0.2px;
   color: #1B1C21;
-  margin-bottom: 12px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .sidenav__email a:hover {
@@ -462,12 +468,30 @@ body {
 }
 
 .sidenav__contact {
-  margin-top: 32px;
+  margin-top: auto;
   margin-bottom: 8px;
 }
 
 .sidenav__icon-bar {
   margin-bottom: 16px;
+}
+
+.overlay {
+  visibility: visible;
+  opacity: 0.96;
+  transition: 0.6s;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  z-index: 8;
+}
+
+.overlay--hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /*------------------------MENU------------------------*/
@@ -485,20 +509,15 @@ body {
   margin-bottom: 0;
 }
 
-.menu__link {
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.2px;  
-  color: #1B1C21;
-  text-decoration: none;
-}
-
-.menu__link--active {
-  color: #7E7E82;
+.menu__item--active {
   position: relative;
 }
 
-.menu__link--active::before { 
+.menu__item--active a {
+  color: #7E7E82;
+}
+
+.menu__item--active::before {
   content: "";
   position: absolute;
   top: -7px;
@@ -507,6 +526,15 @@ body {
   width: 4px;
   height: 32px;
   background: #41F6D7;
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.2px;  
+  color: #1B1C21;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .menu__link:hover {
@@ -521,6 +549,8 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   margin-right: 7px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .lang__item:last-child {
@@ -531,7 +561,7 @@ body {
   color: #7E7E82;
 }
 
-.lang__item:hover:not(.lang__item--active) {
+.lang__item:hover {
   text-decoration: underline;
 }
 
@@ -711,11 +741,6 @@ body {
     margin: 0;
   }
 
-  .about-us__description {
-    max-height: 166px;
-    margin-bottom: 10px;
-  }
-
   .about-us__image img {
     border-radius: 6px;
   }
@@ -744,24 +769,39 @@ body {
   .brands__swiper .swiper-slide {
     flex-basis: calc(33% - 24px);
     max-width: calc(33% - 20px);
+    width: auto;
+    flex-grow: 1;
+    margin: 0 12px 16px;
   }
 
   .brands__swiper {
     padding-bottom: 0;
   }
 
-  .brands__swiper .swiper-slide {
-    width: auto;
-    flex-grow: 1;
-    margin: 0 12px 16px;
-  }
-
   .brands__button-details {
     display: block;
   }
+
+  /*------------------------SIDENAV------------------------*/
+  .sidenav {
+    padding: 19px 24px 32px;
+  }
 }
 
-@media screen and (min-width: 1120px) {
+@media screen and (min-width: 1100px) {
+  /*------------------------BRANDS------------------------*/
+  .brands__swiper .swiper-wrapper::after {
+    content: '';
+    width: calc(100% / 4 - 24px);
+  }
+
+  .brands__swiper .swiper-slide {
+    flex-basis: calc(25% - 24px);
+    max-width: calc(25% - 35px);
+  }
+}
+
+@media screen and (min-width: 1426px) {
   .container {
     padding: 0 35px;
   }
@@ -778,6 +818,10 @@ body {
 
   .page__icon-bar {
     display: flex;
+  }
+
+  .page__container {
+    margin-left: 320px;
   }
 
   /*------------------------ABOUT-US------------------------*/
@@ -816,23 +860,13 @@ body {
     flex-basis: calc(25% - 32px);
     max-width: calc(25% - 24px);
   }
-}
 
-@media screen and (min-height: 676px) {
-  .sidenav__menu {
-    margin-top: 47px;
+  /*------------------------SIDENAV------------------------*/
+  .sidenav {
+    transform: translateX(0px);
   }
 
-  .sidenav__contact {
-    margin-top: 268px;
+  .sidenav__burger {
+    display: none;
   }
-  
-  .menu__item {
-    margin-bottom: 32px;
-  }
-}
-
-.about-us__description--open {
-  max-height: 100%;
-  overflow: visible;
 }
