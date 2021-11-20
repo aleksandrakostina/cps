@@ -1,16 +1,16 @@
-let mobile = window.matchMedia('(min-width: 768px)');
+const mobile = window.matchMedia('(min-width: 768px)');
+const sliders = document.querySelectorAll('.swiper');
 let swiper;
 
 function breakpointCheck() {
   if (mobile.matches) {
-    if (swiper !== undefined) {
-      swiper.destroy(true, true);
+    if (swiper) {
+      sliders.forEach((slider) => slider.swiper.destroy());
     }
-  return;
   } else {
-      return enableSwiper();
-    }
-};
+    enableSwiper();
+  }
+}
 
 function enableSwiper() {
   swiper = new Swiper('.swiper', {
@@ -19,12 +19,11 @@ function enableSwiper() {
     watchOverflow: true,
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
+      clickable: true,
     },
   });
-};
+}
 
 mobile.addEventListener('change', breakpointCheck);
 
 breakpointCheck();
-
