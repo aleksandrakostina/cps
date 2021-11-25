@@ -70,27 +70,27 @@ body {
 }
 
 .icon--call {
-  background-image: url('./icons/call.svg');
+  background-image: url('../icons/call.svg');
 }
 
 .icon--chat {
-  background-image: url('./icons/chat.svg');
+  background-image: url('../icons/chat.svg');
 }
 
 .icon--profile {
-  background-image: url('./icons/profile.svg');
+  background-image: url('../icons/profile.svg');
 }
 
 .icon--repair {
-  background-image: url('./icons/repair.svg');
+  background-image: url('../icons/repair.svg');
 }
 
 .icon--checkstatus {
-  background-image: url('./icons/checkstatus.svg');
+  background-image: url('../icons/checkstatus.svg');
 }
 
 .icon--search {
-  background-image: url('./icons/search.svg');
+  background-image: url('../icons/search.svg');
 }
 
 /*------------------------HEADER------------------------*/
@@ -225,7 +225,7 @@ body {
 .logo {
   width: 98px;
   height: 52px;
-  background: url('./icons/logo.svg') no-repeat;
+  background: url('../icons/logo.svg') no-repeat;
 }
 
 .logo__image {
@@ -268,7 +268,7 @@ body {
 }
 
 .page__slide-menu {
-  margin: 24px -16px 24px 0;
+  margin: 24px;
   position: relative;
 }
 
@@ -293,7 +293,6 @@ body {
 
 /*------------------------ABOUT-US------------------------*/
 .about-us__image {
-  margin: 0 -16px;
   display: flex;
 }
 
@@ -369,7 +368,6 @@ body {
 
 /*------------------------BUTTON_DETAILS------------------------*/
 .button-details {
-  padding-left: 1.5em;
   font-size: 16px;
   line-height: 150%;
   font-weight: 500;
@@ -403,12 +401,15 @@ body {
   position: absolute;
   width: 1em;
   height: 1em;
-  background-image: url('./icons/expand.svg');
+  background-image: url('../icons/expand.svg');
   background-repeat: no-repeat;
   background-position: center;
-  margin-left: -1.5em;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.button-details__text {
+  padding-left: 20px;
 }
 
 /*------------------------SIDENAV------------------------*/
@@ -430,10 +431,6 @@ body {
 
 .sidenav--open {
   transform: translateX(0px);
-  -webkit-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
-    16px 0px 52px rgba(14, 24, 80, 0.2);
-  -moz-box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
-    16px 0px 52px rgba(14, 24, 80, 0.2);
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
     16px 0px 52px rgba(14, 24, 80, 0.2);
 }
@@ -604,8 +601,10 @@ body {
 }
 
 /*------------------------SWIPER------------------------*/
-.swiper {
-  padding-bottom: 28px;
+.brands__swiper.swiper,
+.repair__swiper.swiper,
+.price__swiper.swiper {
+  padding-bottom: 40px;
 }
 
 .swiper-wrapper {
@@ -618,7 +617,6 @@ body {
 
 .swiper .swiper-pagination {
   position: absolute;
-  bottom: 0;
 }
 
 .swiper .swiper-pagination-bullet {
@@ -826,6 +824,8 @@ body {
 
 .footer__container {
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer__item {
@@ -860,7 +860,6 @@ body {
   top: 0;
   right: 0;
   transform: translateX(550px);
-  /*overflow-x: hidden;*/
   transition: transform 0.4s;
 }
 
@@ -1181,7 +1180,7 @@ body {
   }
 
   .footer__container {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 32px 24px 25px;
   }

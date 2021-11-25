@@ -1,3 +1,7 @@
+import Swiper, { Navigation, Pagination } from 'swiper';
+
+Swiper.use([Navigation, Pagination]);
+
 const mobile = window.matchMedia('(min-width: 768px)');
 const sliders = document.querySelectorAll('.swiper');
 let swiper;
