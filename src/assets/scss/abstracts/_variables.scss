@@ -6,15 +6,22 @@ $radical-red: #ff3e79;
 $gallery: #eaeaea;
 $bright-turquoise: #41f6d7;
 $frosted-mint: #d9fff5;
+$bombay: #b5b6bc;
+$alto: #dddddd;
+$brick-red: #cf3160;
 
 $color-background: $alabaster;
 $color-background-light: $white;
-$color-text: $shark;
-$color-text-light: $jumbo;
+$color-text-primary: $shark;
+$color-text-secondary: $jumbo;
+$color-text-third: $bombay;
 $color-button: $radical-red;
 $color-additional: $bright-turquoise;
 $color-border: $gallery;
 $color-line: $frosted-mint;
+$color-text-button: $white;
+$color-bullet: $alto;
+$color-button-hover: $brick-red;
 
 $font-path: './../fonts';
 $font-family: 'TT Lakes, sans-serif';
@@ -73,4 +80,4 @@ $z-index-menu: 10;
 $z-index-overlay: 9;
 $z-index-menu-hide: 8;
 
-$transition: transform 0.4s;
+$transition: opacity 0.6s, transform 0.6s, visibility 0.6s;

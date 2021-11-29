@@ -5,7 +5,7 @@
   line-height: 196%;
   letter-spacing: $letter-spacing-primary;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $color-text-button;
   font-weight: $font-weight-bold;
   border: none;
   padding: 5px 20px;
@@ -13,7 +13,7 @@
   transition: background 0.7s;
 
   &:hover {
-    background: #cf3160;
+    background: $color-button-hover;
   }
 
   &--link {
@@ -25,8 +25,8 @@
       transform: rotate(45deg);
       height: 6px;
       width: 6px;
-      border-top: 2px solid #ffffff;
-      border-right: 2px solid #ffffff;
+      border-top: 2px solid $color-text-button;
+      border-right: 2px solid $color-text-button;
       background: transparent;
       transform-origin: 3px 3px;
       transition: border 0.6s;

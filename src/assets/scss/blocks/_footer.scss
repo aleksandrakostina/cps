@@ -13,11 +13,10 @@
     font-size: $font-size-text-normal;
     line-height: $line-height-small;
     text-align: center;
-    color: $color-text-light;
+    color: $color-text-secondary;
     opacity: 0.72;
     max-width: 312px;
     margin: 0 auto 16px;
-    text-decoration: none;
 
     &:last-child {
       margin-bottom: 0;
@@ -28,6 +27,16 @@
     max-width: 218px;
     display: block;
     margin: 0 auto;
+  }
+
+  &__link {
+    color: $color-text-secondary;
+    opacity: 0.72;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media screen and #{$screen-medium} {

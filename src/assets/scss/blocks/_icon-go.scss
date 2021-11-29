@@ -26,7 +26,7 @@
   }
 
   &:hover::after {
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
+    border-top: 2px solid $color-text-button;
+    border-right: 2px solid $color-text-button;
   }
 }

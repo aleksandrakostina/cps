@@ -17,12 +17,12 @@
         <div class="icon-bar header__icon-bar">
           <ul class="icon-bar__list icon-bar__list--hidden">
             <li class="icon-bar__item">
-              <button type="button" class="icon-button">
+              <button type="button" class="icon-button icon-button--call">
                 <span class="icon icon--call"></span>
               </button>
             </li>
             <li class="icon-bar__item">
-              <button type="button" class="icon-button">
+              <button type="button" class="icon-button icon-button--chat">
                 <span class="icon icon--chat"></span>
               </button>
             </li>
@@ -48,77 +48,7 @@
       </div>
     </header>
     <main class="page">
-      <div class="sidenav">
-        <div class="sidenav__header">
-          <button type="button" class="burger sidenav__burger burger--close">
-            <span class="burger__line"></span>
-          </button>
-          <a href="#" class="logo sidenav__logo"></a>
-          <button type="button" class="icon-button">
-            <span class="icon icon--search"></span>
-          </button>
-        </div>
-        <nav class="menu sidenav__menu">
-          <ul class="menu__list">
-            <li class="menu__item menu__item--active">
-              <a href="#" class="menu__link">Ремонт техники</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Услуги и сервисы</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Корпоративным клиентам</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Продавцам техники</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Партнерам</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Производителям</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Наши сервисные центры</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="contact sidenav__contact">
-          <div class="icon-bar sidenav__icon-bar">
-            <ul class="icon-bar__list ">
-              <li class="icon-bar__item">
-                <button type="button" class="icon-button">
-                  <span class="icon icon--call"></span>
-                </button>
-              </li>
-              <li class="icon-bar__item">
-                <button type="button" class="icon-button">
-                  <span class="icon icon--chat"></span>
-                </button>
-              </li>
-              <li class="icon-bar__item">
-                <button type="button" class="icon-button">
-                  <span class="icon icon--profile"></span>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div class="sidenav__email">
-            <a href="mailto:mail@cps.com">mail@cps.com</a>
-          </div>
-          <div class="sidenav__tel">
-            <a href="tel:8 800 890 8900">8 800 890 8900</a>
-          </div>
-        </div>
-        <div class="lang sidenav__lang">
-          <a href="#" class="lang__item lang__item--active">RU</a>
-          <a href="#" class="lang__item">EN</a>
-          <a href="#" class="lang__item">CH</a>
-        </div>
-      </div>
+
       <div class="container page__container">
         <div class="page__header">
             <h1 class="page__title">Услуги и сервисы</h1>
@@ -175,14 +105,15 @@
                 большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
                 очередь, советуют нас родным и близким.</p>
             </div>
-            <label class="about-us__button-details button-details">
-              <input type="checkbox" class="button-details__input">
-              <span class="button-details__box"></span>
-              <span class="button-details__text">Читать далее</span>
-            </label>
+            <div class="about-us__button-details">
+              <button type="button" class="button-details">
+                <span class="button-details__box"></span>
+                <span class="button-details__text">Читать далее</span>
+              </button>
+            </div>
           </div>
-          <div class="about-us__col about-us__image">
-              <img src="assets/images/cps.jpg" alt="">
+          <div class="about-us__col">
+              <img class="about-us__image" src="assets/images/cps.jpg" alt="">
           </div>
         </div>
         <section class="feature">
@@ -286,11 +217,12 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
-              <label class="brands__button-details button-details">
-                <input type="checkbox" class="button-details__input">
-                <span class="button-details__box"></span>
-                <span class="button-details__text">Показать еще</span>
-              </label>
+              <div class="brands__button-details">
+                <button type="button" class="button-details">
+                  <span class="button-details__box"></span>
+                  <span class="button-details__text">Показать еще</span>
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -347,11 +279,12 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
-              <label class="repair__button-details button-details">
-                <input type="checkbox" class="button-details__input">
-                <span class="button-details__box"></span>
-                <span class="button-details__text">Показать еще</span>
-              </label>
+              <div class="repair__button-details">
+                <button type="button" class="button-details">
+                  <span class="button-details__box"></span>
+                  <span class="button-details__text">Показать еще</span>
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -440,55 +373,12 @@
               </div>
               <p class="price__description">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу.
                 Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
-              <a href="#" class="price__link">Получить коммерческое предложение</a>
+              <div class="price__link">
+                <a href="#">Получить коммерческое предложение</a>
+              </div>
             </div>
           </div>
         </section>
-      </div>
-      <div class="modal modal--callback">
-        <div class="modal__container">
-          <div class="modal__burger">
-            <button type="button" class="burger burger--close">
-              <span class="burger__line"></span>
-            </button>
-          </div>
-          <div class="modal__header">
-            <h2 class="modal__title">Заказать звонок</h2>
-          </div>
-          <form class="modal__form">
-            <input class="modal__input" placeholder="Телефон" type="tel" required>
-            <p class="modal__text">Нажимая “отправить”, вы даете согласие на
-              <a class="modal__link" href="#">обработку персональных данных</a>
-              и соглашаетесь с нашей
-              <a class="modal__link" href="#">политикой конфиденциальности</a>
-            </p>
-            <button type="submit" class="btn modal__btn btn--link">ОТПРАВИТЬ</button>
-          </form>
-        </div>
-      </div>
-      <div class="modal modal--feedback">
-        <div class="modal__container">
-          <div class="modal__burger">
-            <button type="button" class="burger burger--close">
-              <span class="burger__line"></span>
-            </button>
-          </div>
-          <div class="modal__header">
-            <h2 class="modal__title">Обратная связь</h2>
-          </div>
-          <form class="modal__form">
-            <input class="modal__input" placeholder="Имя">
-            <input class="modal__input" placeholder="Телефон" type="tel" required>
-            <input class="modal__input" placeholder="Электронная почта" type="email" required>
-            <textarea class="modal__textarea" placeholder="Сообщение"></textarea>
-            <p class="modal__text">Нажимая “отправить”, вы даете согласие на
-              <a class="modal__link" href="#">обработку персональных данных</a>
-              и соглашаетесь с нашей
-              <a class="modal__link" href="#">политикой конфиденциальности</a>
-            </p>
-            <button type="submit" class="btn modal__btn btn--link">ОТПРАВИТЬ</button>
-          </form>
-        </div>
       </div>
     </main>
     <footer class="footer">
@@ -497,11 +387,129 @@
           <span class="footer__copyright">&#169; 2019 CPS</span>
           <span>Разработано командой Apesong </span>
         </p>
-        <a href="#" class="footer__item">Политика конфиденциальности</a>
+        <div class="footer__item">
+          <a href="#" class="footer__link">Политика конфиденциальности</a>
+        </div>
         <p class="footer__item">Информация, размещенная на данной странице, не является публичной офертой</p>
       </div>
     </footer>
     </div>
     <div class="overlay overlay--hidden"></div>
+    <div class="sidenav">
+      <div class="sidenav__header">
+        <button type="button" class="burger sidenav__burger burger--close">
+          <span class="burger__line"></span>
+        </button>
+        <a href="#" class="logo sidenav__logo"></a>
+        <button type="button" class="icon-button">
+          <span class="icon icon--search"></span>
+        </button>
+      </div>
+      <nav class="menu sidenav__menu">
+        <ul class="menu__list">
+          <li class="menu__item menu__item--active">
+            <a href="#" class="menu__link">Ремонт техники</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Услуги и сервисы</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Корпоративным клиентам</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Продавцам техники</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Партнерам</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Производителям</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Наши сервисные центры</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="contact sidenav__contact">
+        <div class="icon-bar sidenav__icon-bar">
+          <ul class="icon-bar__list ">
+            <li class="icon-bar__item">
+              <button type="button" class="icon-button icon-button--call">
+                <span class="icon icon--call"></span>
+              </button>
+            </li>
+            <li class="icon-bar__item">
+              <button type="button" class="icon-button icon-button--chat">
+                <span class="icon icon--chat"></span>
+              </button>
+            </li>
+            <li class="icon-bar__item">
+              <button type="button" class="icon-button">
+                <span class="icon icon--profile"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="sidenav__email">
+          <a href="mailto:mail@cps.com">mail@cps.com</a>
+        </div>
+        <div class="sidenav__tel">
+          <a href="tel:8 800 890 8900">8 800 890 8900</a>
+        </div>
+      </div>
+      <div class="lang sidenav__lang">
+        <a href="#" class="lang__item lang__item--active">RU</a>
+        <a href="#" class="lang__item">EN</a>
+        <a href="#" class="lang__item">CH</a>
+      </div>
+    </div>
+    <div class="modal modal--callback">
+      <div class="modal__container">
+        <div class="modal__burger">
+          <button type="button" class="burger burger--close">
+            <span class="burger__line"></span>
+          </button>
+        </div>
+        <div class="modal__header">
+          <h2 class="modal__title">Заказать звонок</h2>
+        </div>
+        <form class="modal__form">
+          <input class="modal__input" placeholder="Телефон" type="tel" required>
+          <p class="modal__text">Нажимая “отправить”, вы даете согласие на
+            <a class="modal__link" href="#">обработку персональных данных</a>
+            и соглашаетесь с нашей
+            <a class="modal__link" href="#">политикой конфиденциальности</a>
+          </p>
+          <button type="submit" class="btn modal__btn btn--link">ОТПРАВИТЬ</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal modal--feedback">
+      <div class="modal__container">
+        <div class="modal__burger">
+          <button type="button" class="burger burger--close">
+            <span class="burger__line"></span>
+          </button>
+        </div>
+        <div class="modal__header">
+          <h2 class="modal__title">Обратная связь</h2>
+        </div>
+        <form class="modal__form">
+          <input class="modal__input" placeholder="Имя">
+          <input class="modal__input" placeholder="Телефон" type="tel" required>
+          <input class="modal__input" placeholder="Электронная почта" type="email" required>
+          <textarea class="modal__textarea" placeholder="Сообщение"></textarea>
+          <p class="modal__text">Нажимая “отправить”, вы даете согласие на
+            <a class="modal__link" href="#">обработку персональных данных</a>
+            и соглашаетесь с нашей
+            <a class="modal__link" href="#">политикой конфиденциальности</a>
+          </p>
+          <button type="submit" class="btn modal__btn btn--link">ОТПРАВИТЬ</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

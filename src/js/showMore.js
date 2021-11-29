@@ -12,42 +12,32 @@ const repairButtonText = document.querySelector(
   '.repair__button-details .button-details__text'
 );
 
-const checkedButtonReadMore = (
-  event,
-  container,
-  classActive,
-  text,
-  buttonText
-) => {
-  if (event.checked) {
-    container.classList.add(classActive);
+const checkedButtonReadMore = (container, classActive, text, buttonText) => {
+  container.classList.toggle(classActive);
+  if (container.classList.contains(classActive)) {
+    buttonText.textContent = text[0];
   } else {
-    container.classList.remove(classActive);
+    buttonText.textContent = text[1];
   }
-  buttonText.textContent = event.checked ? text[0] : text[1];
 };
 
 const showMore = (e) => {
-  const event = e.target;
-  if (event.closest('.brands__button-details')) {
+  if (e.target.closest('.brands__button-details')) {
     checkedButtonReadMore(
-      event,
       brandsContent,
       'brands__content--open',
       ['Скрыть', 'Показать еще'],
       brandsButtonText
     );
-  } else if (event.closest('.about-us__button-details')) {
+  } else if (e.target.closest('.about-us__button-details')) {
     checkedButtonReadMore(
-      event,
       aboutUsDescription,
       'about-us__description--open',
       ['Скрыть', 'Читать далее'],
       aboutUsButtonText
     );
-  } else if (event.closest('.repair__button-details')) {
+  } else if (e.target.closest('.repair__button-details')) {
     checkedButtonReadMore(
-      event,
       repairContent,
       'repair__content--open',
       ['Скрыть', 'Показать еще'],

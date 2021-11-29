@@ -5,7 +5,7 @@
     font-size: $font-size-text-medium;
     line-height: $line-height-huge;
     letter-spacing: $letter-spacing-primary;
-    color: $color-text;
+    color: $color-text-primary;
     text-transform: uppercase;
     cursor: pointer;
     margin-right: 7px;
@@ -21,7 +21,7 @@
     }
 
     &--active {
-      color: $color-text-light;
+      color: $color-text-secondary;
     }
   }
 }

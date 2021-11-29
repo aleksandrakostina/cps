@@ -15,21 +15,21 @@
 
     &--active {
       position: relative;
-    }
 
-    &--active a {
-      color: $color-text-light;
-    }
+      a {
+        color: $color-text-secondary;
+      }
 
-    &--active::before {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 0;
-      display: block;
-      width: 4px;
-      height: 32px;
-      background: $color-additional;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: 0;
+        display: block;
+        width: 4px;
+        height: 32px;
+        background: $color-additional;
+      }
     }
   }
 
@@ -37,7 +37,7 @@
     font-size: $font-size-text-medium;
     line-height: $line-height-huge;
     letter-spacing: $letter-spacing-primary;
-    color: $color-text;
+    color: $color-text-primary;
     text-decoration: none;
     font-weight: $font-weight-medium;
 

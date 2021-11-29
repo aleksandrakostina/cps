@@ -25,7 +25,7 @@
     margin: 0;
     font-size: $font-size-text-normal;
     line-height: $line-height-small;
-    color: $color-text-light;
+    color:  $color-text-secondary;
     opacity: 0.72;
     font-weight: $font-weight-medium;
     margin-bottom: 4px;
@@ -36,7 +36,7 @@
     font-size: $font-size-text-normal;
     line-height: $line-height-normal;
     letter-spacing: $letter-spacing-secondary;
-    color: $color-text;
+    color: $color-text-primary;
     font-weight: $font-weight-regular;
     margin-bottom: 16px;
   }
@@ -52,32 +52,36 @@
     font-size: $font-size-text-normal;
     line-height: $line-height-large;
     letter-spacing: $letter-spacing-secondary;
-    color: $color-text;
+    color: $color-text-primary;
     margin: 16px 0;
     padding: $padding-mobile;
   }
 
   &__link {
-    font-size: $font-size-text-medium;
-    line-height: $line-height-huge;
-    letter-spacing: $letter-spacing-primary;
-    color: $color-text;
-    text-decoration: none;
-    font-weight: $font-weight-medium;
-    display: inline-flex;
-    align-items: center;
     padding: $padding-mobile;
+    display: inline;
 
-    &::after {
-      content: '';
-      width: 7px;
-      height: 7px;
-      background: transparent;
-      border-top: 2px solid $color-button;
-      border-right: 2px solid $color-button;
-      transform: rotate(45deg);
-      transform-origin: bottom;
-      margin-left: 10px;
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-size: $font-size-text-medium;
+      line-height: $line-height-huge;
+      letter-spacing: $letter-spacing-primary;
+      color: $color-text-primary;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+
+      &::after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        background: transparent;
+        border-top: 2px solid $color-button;
+        border-right: 2px solid $color-button;
+        transform: rotate(45deg);
+        transform-origin: bottom;
+        margin-left: 10px;
+      }
     }
 
     &:hover {

@@ -4,25 +4,13 @@
   font-weight: $font-weight-medium;
   position: relative;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: $color-text-primary;
+  padding: 0;
 
   &:hover {
     text-decoration: underline;
-  }
-
-  &__input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-
-    &:focus + &__box {
-      outline: #000000 auto 5px;
-    }
-
-    &:checked + &__box {
-      transform: translateY(-50%) rotate(-180deg);
-    }
   }
 
   &__box {

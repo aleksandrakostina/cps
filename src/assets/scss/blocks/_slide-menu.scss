@@ -14,7 +14,7 @@
     line-height: $line-height-huge;
     letter-spacing: $letter-spacing-primary;
     white-space: nowrap;
-    color: $color-text-light;
+    color: $color-text-secondary;
     list-style: none;
 
     &:hover {
@@ -36,7 +36,7 @@
     display: block;
     padding: 8px 9px 8px 17px;
     text-decoration: none;
-    color: $color-text-light;
+    color: $color-text-secondary;
     font-weight: $font-weight-medium;
   }
 
